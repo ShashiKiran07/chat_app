@@ -1,9 +1,14 @@
 from application import create_app
 from flask_socketio import SocketIO
+from flask import render_template
 
 
 app = create_app()
 socketio = SocketIO(app)
+
+@app.route('/', methods = ['GET','POST'])
+def sessions():
+    return render_template('session.html')
 
 def messageReceived(methods=['GET', 'POST']):
     print('message was received!!!')

@@ -10,6 +10,6 @@ def create_app(config_class=Config):
     app = Flask(__name__)
     app.config.from_object(Config)
 
-    from application.routes import chat
-    app.register_blueprint(chat)
+    # from application.routes import chat
+    # app.register_blueprint(chat)
     return app
